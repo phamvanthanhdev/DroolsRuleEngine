@@ -1,0 +1,19 @@
+package KieRule;
+import com.rule.drools.Order;
+import com.rule.drools.Customer;
+global com.rule.drools.VirtualSmartPhone virtualObject;
+
+
+rule "DoTuoi_NguoiLon"
+when
+customerObject : Customer(doTuoi == "Nguoi Lon");
+then
+virtualObject.setDanhMuc("Laptop");
+end;
+
+rule "DoTuoi_TreEm"
+when
+customerObject : Customer(doTuoi == "Tre Em");
+then
+virtualObject.setDanhMuc("Dien Thoai");
+end;
